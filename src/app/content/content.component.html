@@ -1,0 +1,76 @@
+<div class="ag-format-container">
+    <div class="ag-courses_box">
+      <div *ngFor="let item of courses" class="ag-courses_item">
+        <a href="" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+  
+          <div class="ag-courses-item_title">
+            {{item.name}}
+          </div>
+  
+          <div class="ag-courses-item_date-box">
+            Prie:
+            <span class="ag-courses-item_date">
+              {{item.price}}
+            </span>
+          </div>
+        </a>
+      </div>
+  
+    </div>
+  </div>
+
+
+  <img src="{{image}}" alt="">
+
+  <img [src]="image" alt="">
+<div>
+    <input value="{{name}}">
+    <input [value]="name">
+</div>
+
+<div>
+  <button (click)="Greeting()">Say Hi 😍</button>
+<p>{{value}}</p>
+
+<input (change)="toUpper($event)" value="{{value2}}">
+<input [(ngModel)]="value3">
+<p>{{value3}}</p>
+</div>
+
+<div>
+  <img [src]="image1" alt="">
+  <button (click)="ToggleBulb()">On/Off</button>
+</div>
+
+
+<table *ngIf="flag">
+  <thead>
+    <tr>
+    <td>Name</td>
+    <td>Age</td>
+    <td>is Student</td>
+  </tr>
+  </thead>
+  <tbody>
+    <tr [ngClass]="{'under25': item.Age < 25, 'above25': item.Age >=25}" *ngFor="let item of students">
+<td>{{item.name}}</td>
+<td>{{item.Age}}</td>
+<td>{{item.isStudent}}</td>
+<td *ngIf="item.isStudent">Student</td>
+<td *ngIf="!item.isStudent">Not Student</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Are you a student?</p>
+<select [(ngModel)] = "isStudent">
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+
+<div [ngSwitch]="isStudent">
+<p *ngSwitchCase="'Yes'">You are a student</p>
+<p *ngSwitchCase="'No'">You are a graduated</p>
+<p *ngSwitchDefault>Please select from the list</p>
+</div>
