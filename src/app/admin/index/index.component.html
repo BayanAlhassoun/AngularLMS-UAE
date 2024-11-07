@@ -1,1 +1,19 @@
 <p>index works!</p>
+<p *ngFor="let item of adminSrvice.names">
+{{item}}
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <td>Course Name</td>
+            <td>Category Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of adminSrvice.courses">
+<td>{{item.coursename}}</td>
+<td>{{item.category.categoryname}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AdminService } from 'src/app/admin.service';
 
 @Component({
   selector: 'app-index',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent {
+constructor(public adminService: AdminService){}
 
+ngOnInit()
+{
+  this.adminService.GetAllCourses()
+}
 }
