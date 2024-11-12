@@ -326,11 +326,34 @@
       </ng-template>
 
       <ng-template #callCreateDialog>
-<form>
-    <input type="text" placeholder="Course Name">
-    <input type="number" placeholder="category id">
-    <input type="text" placeholder="image name">
-    <button>Submit</button>
+<form [formGroup]="CreateCourseForm">
+  <div class="example-container">
+    <mat-form-field>
+      <mat-label>Enter course name</mat-label>
+      <input matInput formControlName="courseName" type="text" placeholder="Course Name">
+      <mat-error *ngIf="CreateCourseForm.controls['courseName'].hasError('required')" > course name is reruired</mat-error>
+      <mat-error *ngIf="CreateCourseForm.controls['courseName'].hasError('minLength')" > course name length should be 2 or more</mat-error>
+
+    </mat-form-field>
+  </div>
+
+  <div class="example-container">
+    <mat-form-field>
+      <mat-label>Enter Category id</mat-label>
+      <input matInput formControlName="categoryId" type="number" placeholder="category id">
+    </mat-form-field>
+  </div>
+
+  <div class="example-container">
+    <mat-form-field>
+      <mat-label>Enter image name</mat-label>
+      <input matInput formControlName="imageName" type="text" placeholder="image name">
+    </mat-form-field>
+  </div>
+
+  <div class="example-container">
+      <button (click)="CreateCourse()" class="btn btn-success">Submit</button>
+  </div>
 </form>
       </ng-template>
   </body>

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AdminService } from 'src/app/admin.service';
 
@@ -14,7 +15,12 @@ constructor(public adminSrvice : AdminService, public dialog: MatDialog)
 }
 
 @ViewChild('callDeleteDialog') callDelete : any;
-@ViewChild('callCreateDialog') callCreate: any
+@ViewChild('callCreateDialog') callCreate: any;
+CreateCourseForm: FormGroup = new FormGroup({
+  courseName: new FormControl('', [Validators.required, Validators.minLength(2)]),
+categoryId: new FormControl('', [Validators.required]),
+imageName: new FormControl()
+})
 ngOnInit()
 {
   this.adminSrvice.GetAllCourses();
@@ -56,4 +62,8 @@ openCreateDialog(enterAnimationDuration: string, exitAnimationDuration: string):
   });
 }
 
+CreateCourse()
+{
+  this.adminSrvice.CreateCourse(this.CreateCourseForm.value)
+}
 }
