@@ -22,5 +22,27 @@ GetAllCourses()
   )
 }
 
+
+DeleteCourse(id: number)
+{
+this.http.delete("https://localhost:7139/api/course/"+ id).subscribe(
+  {
+    next:()=>{console.log("Deleted Successfully");
+    },
+    error: (err)=>{console.log(err);
+    }
+  }
+)
+}
+
+CreateCourse(course: any)
+{
+this.http.post("https://localhost:7139/api/course", course).subscribe({
+  next:()=>{console.log("Created Successfully");
+  },
+  error:()=>{console.log("Something wont wrong");
+  }
+})
+}
 }
 

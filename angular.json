@@ -26,9 +26,18 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
+              "src/styles.css",
+            "src/assets/assets/css/styles.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/assets/libs/jquery/dist/jquery.min.js",
+              "src/assets/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/assets/assets/js/sidebarmenu.js",
+              "src/assets/assets/js/app.min.js",
+              "src/assets/assets/libs/apexcharts/dist/apexcharts.min.js",
+              "src/assets/assets/libs/simplebar/dist/simplebar.js",
+              "src/assets/assets/js/dashboard.js"
+            ]
           },
           "configurations": {
             "production": {
