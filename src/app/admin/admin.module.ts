@@ -9,6 +9,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { CoursesComponent } from './courses/courses.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     IndexComponent,
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    CoursesComponent,
+    CategoriesComponent
   ],
   imports: [
     CommonModule,

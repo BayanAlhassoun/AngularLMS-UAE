@@ -8,6 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MatButtonModule,
     MatSelectModule,
     MatDialogModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    RouterModule
   ]
 })
 export class SharedModule { }

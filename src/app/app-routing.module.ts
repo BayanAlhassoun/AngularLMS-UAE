@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: ()=>import("./admin/admin.module").then(m=>m.AdminModule)
   },
   {
-    path: 'auth',
+    path: '',
     loadChildren: ()=>import("./auth/auth.module").then(m=>m.AuthModule)
   }
 ];
