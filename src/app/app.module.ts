@@ -12,6 +12,8 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminService } from './admin.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,16 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     ContentComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule,
+    ToastrModule.forRoot()
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

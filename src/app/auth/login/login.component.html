@@ -1,0 +1,19 @@
+<body>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form [formGroup]="loginForm">
+    <h3>Login Here</h3>
+    <mat-form-field>
+    <input matInput   formControlName="username" type="text" placeholder="Email or Phone" id="username">
+    <mat-error *ngIf="loginForm.controls['username'].hasError('required')"> Username is required </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+    <input matInput  formControlName="password" type="password" placeholder="Password" id="password">
+    <mat-error *ngIf="loginForm.controls['password'].hasError('required')"> Password is required </mat-error>
+    </mat-form-field>
+    <button (click)="Login()" class="btn btn-secondary">Log In</button>
+  </form>
+</body>
