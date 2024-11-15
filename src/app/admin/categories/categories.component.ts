@@ -17,4 +17,11 @@ ngOnInit()
 {
   this.adminService.GetAllCategories()
 }
+
+searchText: string = ""
+Search()
+{
+  this.adminService.categories = this.adminService.categories.
+  filter((x:any)=> x.categoryname.toUpperCase().includes(this.searchText.toUpperCase()))
+}
 }
